@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <title>Login</title>
 </head>
 <body>
   <h1>Login</h1>
+  <ul>
+    <% if(messages.success_msg){ %>
+      <li><%= messages.success_msg %></li>
+    <% } %>
+  </ul>
+  
+  <form action="/users/login" method="POST">
+        <div>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div>
+          <input type="submit" value="Login">
+        </div>
+        <a href="/users/register">Not yet registered? Register here.</a>
+  </form>
 </body>
 </html>
